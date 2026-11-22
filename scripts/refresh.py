@@ -808,18 +808,16 @@ def diff(old, fresh):
 
 
 def draft_order(seeds, maxpf, pf_final, wins_bracket):
-    """League rule: non-playoff teams pick 1.01-1.06 in reverse Max Points For; playoff teams by
-    consolation/title games (5th-place W/L 1.07/1.08, 3rd-place W/L 1.09/1.10, runner-up 1.11,
-    champion 1.12); a points leader who misses the final is moved to 1.10."""
+    """League rule (Disdained Dozen commissioner): non-playoff teams pick 1.01-1.06 by regular-season
+    record, worst first. Playoff teams pick in the order they are eliminated: first-round losers 1.07-1.08,
+    semifinal losers 1.09-1.10, runner-up 1.11, champion 1.12. Ties (the site's assumption, not a written
+    rule): equal records go to the team with fewer points for; losers in the same round go worse seed first.
+    `seeds` is already sorted best to worst by wins, then points for."""
     P = len(wins_bracket["playoff"])
-    non = sorted(seeds[P:], key=lambda t: maxpf[t])
     b = wins_bracket
-    order = non + [b["fifthW"], b["fifthL"], b["thirdW"], b["thirdL"], b["runnerUp"], b["champ"]]
-    leader = max(pf_final, key=pf_final.get)
-    if leader not in (b["champ"], b["runnerUp"]):
-        order.remove(leader)
-        order.insert(9, leader)
-    return order
+    worse_first = lambda pair: sorted(pair, key=lambda t: -seeds.index(t))
+    return list(reversed(seeds[P:])) + worse_first([b["fifthW"], b["fifthL"]]) + \
+        worse_first([b["thirdW"], b["thirdL"]]) + [b["runnerUp"], b["champ"]]
 
 
 def bracket(seeds, play, P=6, start=None):
@@ -889,7 +887,7 @@ def project_draft(teams, weeks, schedule, P=6, N=10000, seed=7, starter=None, pr
         order = draft_order(seeds, mx, pf, br)
         for slot, t in enumerate(order):
             dist[t][slot] += 1
-        # classic: non-playoff teams by worst record (then fewest points), playoff teams by finish, no 1.10 rule
+        # classic: non-playoff teams by worst record (then fewest points), playoff teams by finish
         corder = sorted(seeds[P:], key=lambda i: (w[i], pf[i])) + [br["fifthW"], br["fifthL"], br["thirdW"], br["thirdL"], br["runnerUp"], br["champ"]]
         for slot, t in enumerate(corder):
             classic[t][slot] += 1
