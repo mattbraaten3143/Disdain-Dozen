@@ -28,6 +28,12 @@ HEAD = """<!doctype html>
 <meta name="description" content="The Disdained Dozen Sports Network: live scores, standings, trade grades and dynasty tools for The Disdained Dozen. Twelve teams, zero respect.">
 <meta name="theme-color" content="#0E0E0E">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="DDSN">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 <body>
 """

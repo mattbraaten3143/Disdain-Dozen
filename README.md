@@ -33,11 +33,25 @@ vercel.json              hosting settings, including the /sleeper pass-through t
 | Someone opens the site | `live.js` pulls current records, standings and scores from Sleeper; the ticker refreshes every minute during games | the visitor's browser |
 | Every morning, about 5 AM Central | `refresh.py` pulls Sleeper, FantasyCalc and Dynasty Daddy; `news.py` writes news items; `recap_prep.py` gathers last week's recap facts once the week is over (Tuesday); page rebuilt and committed | GitHub Actions |
 | Every morning, about 8 AM Central | **DDSN Writer** (Claude scheduled task, runs in the cloud): writes the weekly recap when facts are waiting, and write-ups for new trades | Claude cloud |
+| About every minute during games | Game-day ticker (`.github/workflows/game-ticker.yml`) calls `/api/tick`, which sends phone alerts | GitHub Actions + Vercel |
 | Every commit | Vercel redeploys the site | Vercel |
 
 If Sleeper is down in the morning, the refresh keeps yesterday's data and tries again the next day.
 
 The Week 10 recap is the **Season in Review** (Weeks 1 to 10). Weekly recaps start with Week 11.
+
+## App and phone alerts
+
+- **Installable app**: `public/manifest.webmanifest`, `public/icons/`, `public/sw.js`. Android and desktop get an
+  "Install the app" button on the Live tab; iPhone users add it from Safari's Share menu (iOS only allows web
+  alerts in installed apps).
+- **Alerts** (Live tab → App & alerts): each device picks player-score alerts (big plays 6+ or every score, for
+  tracked players and its own team's starters), lead changes and finals in its matchup and pinned matchups, and
+  league news (new recap, new trade write-ups).
+  - `api/push.js` stores sign-ups in Upstash Redis (Vercel Storage → Upstash, env `KV_REST_API_URL`/`KV_REST_API_TOKEN`).
+    VAPID keys are generated on first use and kept in Redis; nothing to paste.
+  - Every Redis key starts with `ddsn:` so this site can share an Upstash database with the OGSN site safely.
+  - `api/tick.js` compares live points with the last run and sends alerts; a Redis lock keeps it to once per 40 s.
 
 ## League rules
 
