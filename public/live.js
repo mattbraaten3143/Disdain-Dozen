@@ -152,6 +152,8 @@
     var s = document.createElement("script");
     s.textContent = app.textContent;
     document.body.appendChild(s);
+    window.__ogsnReady = true;
+    document.dispatchEvent(new Event("ogsn:ready"));
   }
 
   function poll(week) {
@@ -171,7 +173,8 @@
 
   var timer = setTimeout(startApp, BOOT_TIMEOUT); // Sleeper too slow: draw with built-in data
   fetchAll().then(function (s) {
-    if (started || !s) return;
+    if (started) return;
+    if (!s) { clearTimeout(timer); startApp(); return; } // Sleeper unreachable: draw now with built-in data
     if (patch(s.data, s)) {
       document.getElementById("league-data").textContent = JSON.stringify(s.data);
       clearTimeout(timer);
