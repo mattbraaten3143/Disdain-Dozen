@@ -1,0 +1,222 @@
+{
+ "week": 11,
+ "note": "Odds in percent from 10,000 simulated seasons. 'before' replays this week with the same rosters; small swings are noise.",
+ "teams": {
+  "Love on MyBallz": {
+   "before": {
+    "rank": 2,
+    "record": "8-2",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 100,
+    "bye": 78,
+    "title": 23
+   },
+   "after": {
+    "rank": 1,
+    "record": "9-2",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 100,
+    "bye": 90,
+    "title": 24
+   }
+  },
+  "C-Money": {
+   "before": {
+    "rank": 3,
+    "record": "7-3",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 99,
+    "bye": 19,
+    "title": 12
+   },
+   "after": {
+    "rank": 4,
+    "record": "7-4",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 99,
+    "bye": 9,
+    "title": 10
+   }
+  },
+  "The Donner Party": {
+   "before": {
+    "rank": 9,
+    "record": "4-6",
+    "gamesBackOfLastPlayoffSpot": 1.0,
+    "playoffs": 13,
+    "bye": 0,
+    "title": 1
+   },
+   "after": {
+    "rank": 8,
+    "record": "5-6",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 18,
+    "bye": 0,
+    "title": 1
+   }
+  },
+  "Upper Deckers": {
+   "before": {
+    "rank": 11,
+    "record": "3-7",
+    "gamesBackOfLastPlayoffSpot": 2.0,
+    "playoffs": 0,
+    "bye": 0,
+    "title": 0
+   },
+   "after": {
+    "rank": 12,
+    "record": "3-8",
+    "gamesBackOfLastPlayoffSpot": 2.0,
+    "playoffs": 0,
+    "bye": 0,
+    "title": 0
+   }
+  },
+  "hopethisHurts": {
+   "before": {
+    "rank": 8,
+    "record": "4-6",
+    "gamesBackOfLastPlayoffSpot": 1.0,
+    "playoffs": 10,
+    "bye": 0,
+    "title": 0
+   },
+   "after": {
+    "rank": 7,
+    "record": "5-6",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 31,
+    "bye": 0,
+    "title": 1
+   }
+  },
+  "I Can’t Quit Tuten": {
+   "before": {
+    "rank": 4,
+    "record": "6-4",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 96,
+    "bye": 11,
+    "title": 17
+   },
+   "after": {
+    "rank": 3,
+    "record": "7-4",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 99,
+    "bye": 22,
+    "title": 19
+   }
+  },
+  "LibertyBiberty": {
+   "before": {
+    "rank": 1,
+    "record": "8-2",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 100,
+    "bye": 88,
+    "title": 35
+   },
+   "after": {
+    "rank": 2,
+    "record": "8-3",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 100,
+    "bye": 74,
+    "title": 33
+   }
+  },
+  "Carson City Yinzers": {
+   "before": {
+    "rank": 10,
+    "record": "3-7",
+    "gamesBackOfLastPlayoffSpot": 2.0,
+    "playoffs": 1,
+    "bye": 0,
+    "title": 0
+   },
+   "after": {
+    "rank": 10,
+    "record": "3-8",
+    "gamesBackOfLastPlayoffSpot": 2.0,
+    "playoffs": 0,
+    "bye": 0,
+    "title": 0
+   }
+  },
+  "Diddys Oilers": {
+   "before": {
+    "rank": 6,
+    "record": "5-5",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 53,
+    "bye": 0,
+    "title": 3
+   },
+   "after": {
+    "rank": 6,
+    "record": "5-6",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 39,
+    "bye": 0,
+    "title": 2
+   }
+  },
+  "AnnexationOfPR": {
+   "before": {
+    "rank": 12,
+    "record": "2-8",
+    "gamesBackOfLastPlayoffSpot": 3.0,
+    "playoffs": 0,
+    "bye": 0,
+    "title": 0
+   },
+   "after": {
+    "rank": 11,
+    "record": "3-8",
+    "gamesBackOfLastPlayoffSpot": 2.0,
+    "playoffs": 0,
+    "bye": 0,
+    "title": 0
+   }
+  },
+  "ADUBB818": {
+   "before": {
+    "rank": 7,
+    "record": "4-6",
+    "gamesBackOfLastPlayoffSpot": 1.0,
+    "playoffs": 36,
+    "bye": 0,
+    "title": 3
+   },
+   "after": {
+    "rank": 9,
+    "record": "4-7",
+    "gamesBackOfLastPlayoffSpot": 1.0,
+    "playoffs": 19,
+    "bye": 0,
+    "title": 2
+   }
+  },
+  "KittleMehThis": {
+   "before": {
+    "rank": 5,
+    "record": "6-4",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 91,
+    "bye": 4,
+    "title": 7
+   },
+   "after": {
+    "rank": 5,
+    "record": "7-4",
+    "gamesBackOfLastPlayoffSpot": 0.0,
+    "playoffs": 96,
+    "bye": 5,
+    "title": 8
+   }
+  }
+ }
+}
